@@ -1,4 +1,4 @@
-import {days} from './scripts/form/personal-details.js';
+import {sanitizeNumericField} from './scripts/form/personal-details';
 
 /**
  * Get Full Name
@@ -63,23 +63,7 @@ function sanitizeTextField(textField, globals) {
 // eslint-disable-next-line import/prefer-default-export
 export { getFullName, 
   days, 
-  submitFormArrayToString, 
-  validateKycDocumentNumber,
-  calculateAgeInMonths,
-  validateExperienceVsAge,
-  validateEmiVsMonthlyIncome,
-  validateEmiVsAnnualSalary,
-  validateAvgMonthlyIncome,
-  validateGrossSalary,
-  loadPrefillData,
-  setPersonalDetailsReadOnly,
-  handleCompanySearch,
-  handleCompanySelected,
-  handleSavePartial,
-  handleSubmit,
-  showToast,
-  handleSessionTimeout,
+  submitFormArrayToString,
   sanitizeTextField,
-  sanitizeNumericField,
-  initCibilFlow 
+  sanitizeNumericField
 };
