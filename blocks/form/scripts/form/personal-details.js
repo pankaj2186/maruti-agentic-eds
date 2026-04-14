@@ -690,5 +690,5 @@ export {
   handleSessionTimeout,
   sanitizeTextField,
   sanitizeNumericField,
-  initCibilFlow,
+  initCibilFlow
 };

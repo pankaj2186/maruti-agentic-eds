@@ -45,4 +45,25 @@ function days(endDate, startDate) {
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export { getFullName, days, submitFormArrayToString };
+export { getFullName, 
+  days, 
+  submitFormArrayToString, 
+  validateKycDocumentNumber,
+  calculateAgeInMonths,
+  validateExperienceVsAge,
+  validateEmiVsMonthlyIncome,
+  validateEmiVsAnnualSalary,
+  validateAvgMonthlyIncome,
+  validateGrossSalary,
+  loadPrefillData,
+  setPersonalDetailsReadOnly,
+  handleCompanySearch,
+  handleCompanySelected,
+  handleSavePartial,
+  handleSubmit,
+  showToast,
+  handleSessionTimeout,
+  sanitizeTextField,
+  sanitizeNumericField,
+  initCibilFlow 
+};
