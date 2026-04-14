@@ -44,6 +44,22 @@ function days(endDate, startDate) {
   return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 }
 
+
+/**
+ * Auto-converts a text field value to uppercase on every change. Used for
+ * firstName, lastName, middleName, panNumber and kycDocumentNumber.
+ * @name sanitizeTextField Sanitize Text Field
+ * @param {object} textField - Text input field to sanitize
+ * @param {scope} globals - Globals object
+ */
+function sanitizeTextField(textField, globals) {
+  const raw = textField.$value || '';
+  const upper = raw.toUpperCase();
+  if (upper !== raw) {
+    globals.functions.setProperty(textField, { value: upper });
+  }
+}
+
 // eslint-disable-next-line import/prefer-default-export
 export { getFullName, 
   days, 
