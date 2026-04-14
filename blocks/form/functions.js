@@ -1,4 +1,4 @@
-`import {days} from './scripts/form/personal-details.js';
+import {days} from './scripts/form/personal-details.js';
 
 /**
  * Get Full Name
