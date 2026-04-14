@@ -1,3 +1,22 @@
+import {validateKycDocumentNumber,
+  calculateAgeInMonths,
+  validateExperienceVsAge,
+  validateEmiVsMonthlyIncome,
+  validateEmiVsAnnualSalary,
+  validateAvgMonthlyIncome,
+  validateGrossSalary,
+  loadPrefillData,
+  setPersonalDetailsReadOnly,
+  handleCompanySearch,
+  handleCompanySelected,
+  handleSavePartial,
+  handleSubmit,
+  showToast,
+  handleSessionTimeout,
+  sanitizeTextField,
+  sanitizeNumericField,
+  initCibilFlow} from './scripts/form/personal-details';
+
 /**
  * Get Full Name
  * @name getFullName Concats first name and last name
@@ -46,5 +65,23 @@ function days(endDate, startDate) {
 // eslint-disable-next-line import/prefer-default-export
 export { getFullName, 
   days, 
-  submitFormArrayToString
+  submitFormArrayToString,
+  validateKycDocumentNumber,
+  calculateAgeInMonths,
+  validateExperienceVsAge,
+  validateEmiVsMonthlyIncome,
+  validateEmiVsAnnualSalary,
+  validateAvgMonthlyIncome,
+  validateGrossSalary,
+  loadPrefillData,
+  setPersonalDetailsReadOnly,
+  handleCompanySearch,
+  handleCompanySelected,
+  handleSavePartial,
+  handleSubmit,
+  showToast,
+  handleSessionTimeout,
+  sanitizeTextField,
+  sanitizeNumericField,
+  initCibilFlow
 };
