@@ -66,12 +66,14 @@ function days(endDate, startDate) {
  * @name setSerialNumber
  * @param {object} serialField  // field inside the panel
  * @param {scope} globals
+ * @returns {number} returns the index+1 of the panel instance
  */
 function setSerialNumber(serialField, globals) {
   // index of current panel instance (0-based)
   var index = globals.field.$parent.$index;
   // set value = index + 1
   globals.functions.setProperty(serialField, { value: index + 1 });
+  return index + 1;
 }
 
 
@@ -98,5 +100,5 @@ export { getFullName,
   sanitizeTextField,
   sanitizeNumericField,
   initCibilFlow,
-  setSerialNumber
+  
 };
