@@ -57,11 +57,6 @@
     --form-wizard-step-legend-padding: 10px;
     --form-wizard-step-legend-font-size: 1.1rem;
     --form-field-gap: 5px;
-
-    /* Required, read-only/disabled, and repeatable panel emphasis */
-    --form-required-field-background: #fffacd;
-    --form-disabled-readonly-background: #c8e6c9;
-    --form-repeatable-border-color: #001f3f;
     
     /* Card styling variables */
     --form-card-border-color: #e0e0e0;
@@ -181,18 +176,8 @@ main .form input:hover, main .form select:hover {
     border-color: rgb(90 92 96);
 }
 
-/**
- * Mandatory / required fields — light yellow on the control surface
- * (disabled/readonly overrides below). Supports data-required from model
- * and HTML required; [data-required] matches "true" or empty string from rules.
- */
-main .form .field-wrapper[data-required] input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="hidden"]),
-main .form .field-wrapper[data-required] textarea,
-main .form .field-wrapper[data-required] select,
-main .form input[required]:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="hidden"]),
-main .form textarea[required],
-main .form select[required] {
-    background-color: var(--form-required-field-background);
+main .form input:disabled{
+    background-color: var(--form-input-disable-color);
 }
 
 main .form form .radio-wrapper.field-invalid > input,
@@ -450,17 +435,10 @@ main .submit-wrapper{
     width: var(--form-submit-width);
 }
 
-/**
- * Disabled and read-only fields — green background (overrides required yellow)
- */
-main .form input:disabled,
 main .form textarea:disabled,
 main .form select:disabled,
-main .form button:disabled,
-main .form input[readonly],
-main .form textarea[readonly],
-main .form select[readonly] {
-    background-color: var(--form-disabled-readonly-background);
+main .form button:disabled {
+    background-color: var(--form-input-disable-color);
 }
 
 main .file-wrapper.decorated input[type="file"] {
@@ -555,14 +533,13 @@ main .form .button-wrapper button:hover {
 }
 
 main .form .button-wrapper button[disabled] {
-    cursor: auto;
-    background-color: var(--form-disabled-readonly-background);
+    cursor:auto
 }
 
 main .form .button-wrapper button[disabled]:hover {
     border: 3px solid var(--button-secondary-color);
     color: var(--button-secondary-color);
-    background-color: var(--form-disabled-readonly-background);
+    background-color: transparent;
 }
 
 /** Wizard Styling */
@@ -663,13 +640,10 @@ main .form form .panel-wrapper{
   gap: var(--form-field-vert-gap) var(--form-field-horz-gap);
 }
 
-main .form form .repeat-wrapper {
+main .form form .repeat-wrapper{
     display: grid;
     grid-template-columns: repeat(var(--form-columns), minmax(0, 1fr));
     gap: var(--form-field-vert-gap) var(--form-field-horz-gap);
-    border: 2px solid var(--form-repeatable-border-color);
-    padding: 0.75rem;
-    box-sizing: border-box;
 }
 
 main .form form .wizard.left .panel-wrapper{
