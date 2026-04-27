@@ -79,7 +79,8 @@ function setSerialNumber(serialField, globals) {
 
 
 // eslint-disable-next-line import/prefer-default-export
-export { getFullName, 
+export { 
+  getFullName, 
   days, 
   submitFormArrayToString,
   validateKycDocumentNumber,
@@ -100,5 +101,5 @@ export { getFullName,
   sanitizeTextField,
   sanitizeNumericField,
   initCibilFlow,
-  
+  setSerialNumber
 };
