@@ -17,6 +17,22 @@ import {validateKycDocumentNumber,
   sanitizeNumericField,
   initCibilFlow} from './scripts/form/personal-details';
 
+
+/**
+ * Set serial number for the current instance of a repeatable panel.
+ * @name setSerialNumber
+ * @param {object} serialField  // field inside the panel
+ * @param {scope} globals
+ * @returns {string}
+ */
+function setSerialNumber(serialField, globals) {
+  // index of current panel instance (0-based)
+  var index = globals.field.$parent.$index;
+  // set value = index + 1
+  globals.functions.setProperty(serialField, { value: index + 1 });
+  return String(index + 1);
+}
+
 /**
  * Get Full Name
  * @name getFullName Concats first name and last name
@@ -60,23 +76,6 @@ function days(endDate, startDate) {
   const diffInMs = Math.abs(end.getTime() - start.getTime());
   return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 }
-
-/**
- * Set serial number for the current instance of a repeatable panel.
- * @name setSerialNumber
- * @param {object} serialField  // field inside the panel
- * @param {scope} globals
- * @returns {string}
- */
-function setSerialNumber(serialField, globals) {
-  // index of current panel instance (0-based)
-  var index = globals.field.$parent.$index;
-  // set value = index + 1
-  globals.functions.setProperty(serialField, { value: index + 1 });
-  return String(index + 1);
-}
-
-
 
 // eslint-disable-next-line import/prefer-default-export
 export { 
