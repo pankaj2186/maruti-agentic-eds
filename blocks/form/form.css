@@ -183,9 +183,9 @@ main .form input:hover, main .form select:hover {
 /**
  * Mandatory / required fields — light yellow background
  */
-main .form .field-wrapper[data-required] input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="hidden"]),
-main .form .field-wrapper[data-required] textarea,
-main .form .field-wrapper[data-required] select,
+main .form .field-wrapper[data-required="true"] input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="hidden"]),
+main .form .field-wrapper[data-required="true"] textarea,
+main .form .field-wrapper[data-required="true"] select,
 main .form input[required]:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="hidden"]),
 main .form textarea[required],
 main .form select[required] {
