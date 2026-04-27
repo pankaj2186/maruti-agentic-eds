@@ -61,6 +61,20 @@ function days(endDate, startDate) {
   return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 }
 
+/**
+ * Set serial number for the current instance of a repeatable panel.
+ * @name setSerialNumber
+ * @param {object} serialField  // field inside the panel
+ * @param {scope} globals
+ */
+function setSerialNumber(serialField, globals) {
+  // index of current panel instance (0-based)
+  var index = globals.field.$parent.$index;
+  // set value = index + 1
+  globals.functions.setProperty(serialField, { value: index + 1 });
+}
+
+
 
 // eslint-disable-next-line import/prefer-default-export
 export { getFullName, 
@@ -83,5 +97,6 @@ export { getFullName,
   handleSessionTimeout,
   sanitizeTextField,
   sanitizeNumericField,
-  initCibilFlow
+  initCibilFlow,
+  setSerialNumber
 };
