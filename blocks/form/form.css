@@ -60,7 +60,7 @@
 
     /* Required, disabled/readonly, and repeatable panel styling */
     --form-required-field-background: #fffacd;
-    --form-repeatable-border-color: #001f3f;
+    --form-repeatable-border-color: #000080;
     
     /* Card styling variables */
     --form-card-border-color: #e0e0e0;
