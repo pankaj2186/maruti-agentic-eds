@@ -61,6 +61,7 @@
     /* Required, disabled/readonly, and repeatable panel styling */
     --form-required-field-background: #fffacd;
     --form-repeatable-border-color: #000080;
+    --form-repeatable-fieldset-border-size: 1px;
     
     /* Card styling variables */
     --form-card-border-color: #e0e0e0;
@@ -121,6 +122,14 @@ main .form form fieldset {
 
 main .form form fieldset fieldset {
     padding: 0;
+}
+
+/**
+ * Repeatable fieldset — thin navy blue border
+ */
+main .form form fieldset[data-repeatable="true"] {
+    border: var(--form-repeatable-fieldset-border-size) solid var(--form-repeatable-border-color);
+    padding: 0.5rem;
 }
 
 main .form .field-description {
