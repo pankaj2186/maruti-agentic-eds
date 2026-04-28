@@ -220,6 +220,18 @@ function populateColors(selectedModel, colorDropdown, globals) {
   globals.functions.setProperty(colorDropdown, { value: enumValues[0] });
 }
 
+/**
+ * Checks if the form is opened on a mobile browser.
+ * @name isMobileBrowser Detect Mobile Browser
+ * @returns {boolean} true if mobile browser, false if desktop
+ */
+function isMobileBrowser() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+  var isSmallScreen = window.innerWidth <= 768;
+  return isMobile || isSmallScreen;
+}
+
 // eslint-disable-next-line import/prefer-default-export
 export { 
   getFullName, 
@@ -244,5 +256,6 @@ export {
   sanitizeNumericField,
   initCibilFlow,
   populateVariants,
-  populateColors
+  populateColors,
+  isMobileBrowser
 };
