@@ -551,7 +551,7 @@ main .file-wrapper .file-description button::after{
 }
 
 main .form .button-wrapper button {
-    cursor:pointer
+    cursor:pointer;
     align-self: end;
     margin-bottom: 1rem;
 }
