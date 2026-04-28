@@ -15,12 +15,12 @@ import {validateKycDocumentNumber,
   handleSessionTimeout,
   sanitizeTextField,
   sanitizeNumericField,
-  initCibilFlow} from './scripts/form/personal-details';
+  initCibilFlow} from './scripts/form/personal-details.js';
 
   import {populateVariants,
     populateColors,
     mobileBrowser,
-    setSerialNumber} from './scripts/form/dealer-functions';
+    setSerialNumber} from './scripts/form/dealer-functions.js';
 
 /**
  * Get Full Name
