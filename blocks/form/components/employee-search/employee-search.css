@@ -1,10 +1,10 @@
-/* Custom component styles: employer-search */
+/* Custom component styles: employee-search */
 
-.employer-search__input-wrapper {
+.employee-search__input-wrapper {
   position: relative;
 }
 
-.employer-search__dropdown {
+.employee-search__dropdown {
   display: none;
   position: absolute;
   top: 100%;
@@ -23,11 +23,11 @@
   padding: 0;
 }
 
-.employer-search__dropdown--visible {
+.employee-search__dropdown--visible {
   display: block;
 }
 
-.employer-search__option {
+.employee-search__option {
   padding: 10px 12px;
   cursor: pointer;
   font-size: 0.875rem;
@@ -38,12 +38,12 @@
   text-overflow: ellipsis;
 }
 
-.employer-search__option:last-child {
+.employee-search__option:last-child {
   border-bottom: none;
 }
 
-.employer-search__option:hover,
-.employer-search__option:focus {
+.employee-search__option:hover,
+.employee-search__option:focus {
   background-color: #f5f5f5;
   color: #000;
 }

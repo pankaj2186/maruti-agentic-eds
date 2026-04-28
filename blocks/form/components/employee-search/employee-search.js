@@ -1,8 +1,8 @@
 /**
- * Custom component: employer-search
+ * Custom component: employee-search
  * Base type: text-input
  *
- * Typeahead autocomplete for employer/company search.
+ * Typeahead autocomplete for employee/company search.
  * Calls /api/sitecore/loanoffer/companysearch on each input (debounced, min 3 chars).
  * Shows results as "cin - company_name". On selection, sets field value to company_name
  * and stores the CIN map in sessionStorage for the submit payload.
@@ -38,7 +38,7 @@ async function searchCompanies(searchText) {
 function hideDropdown(dropdown) {
   // eslint-disable-next-line no-param-reassign
   dropdown.innerHTML = '';
-  dropdown.classList.remove('employer-search__dropdown--visible');
+  dropdown.classList.remove('employee-search__dropdown--visible');
 }
 
 function updateCinMap(companies) {
@@ -66,7 +66,7 @@ function renderResults(dropdown, companies, input) {
 
   companies.forEach((company) => {
     const li = document.createElement('li');
-    li.classList.add('employer-search__option');
+    li.classList.add('employee-search__option');
     li.setAttribute('role', 'option');
     li.textContent = `${company.cin} - ${company.company_name}`;
 
@@ -81,25 +81,25 @@ function renderResults(dropdown, companies, input) {
     dropdown.append(li);
   });
 
-  dropdown.classList.add('employer-search__dropdown--visible');
+  dropdown.classList.add('employee-search__dropdown--visible');
 }
 
 export default async function decorate(fieldDiv) {
-  fieldDiv.classList.add('employer-search');
+  fieldDiv.classList.add('employee-search');
 
   const input = fieldDiv.querySelector('input');
   if (!input) return;
 
   // Wrap input so dropdown can be absolutely positioned below it
   const inputWrapper = document.createElement('div');
-  inputWrapper.classList.add('employer-search__input-wrapper');
+  inputWrapper.classList.add('employee-search__input-wrapper');
   input.replaceWith(inputWrapper);
   inputWrapper.append(input);
 
   const dropdown = document.createElement('ul');
-  dropdown.classList.add('employer-search__dropdown');
+  dropdown.classList.add('employee-search__dropdown');
   dropdown.setAttribute('role', 'listbox');
-  dropdown.setAttribute('aria-label', 'Employer suggestions');
+  dropdown.setAttribute('aria-label', 'Employee suggestions');
   inputWrapper.append(dropdown);
 
   input.setAttribute('autocomplete', 'off');
@@ -125,7 +125,7 @@ export default async function decorate(fieldDiv) {
 
   input.addEventListener('focus', () => {
     if (input.value.trim().length >= MIN_SEARCH_LENGTH && dropdown.children.length) {
-      dropdown.classList.add('employer-search__dropdown--visible');
+      dropdown.classList.add('employee-search__dropdown--visible');
     }
   });
 
