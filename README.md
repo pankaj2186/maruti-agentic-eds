@@ -1,4 +1,4 @@
-# Reference Demo Framework (for AEM EDS)
+# Maruti From Ref Demo Framework (for AEM EDS)
 
 **Build your Own Demos for EDS**
 - Custom Themes (with and without code)
