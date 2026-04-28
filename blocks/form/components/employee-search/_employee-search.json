@@ -1,0 +1,55 @@
+{
+  "definitions": [
+    {
+      "title": "Employee search",
+      "id": "employee-search",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/fd/components/form/textinput/v1/textinput",
+            "template": {
+              "jcr:title": "Employee search",
+              "fieldType": "text-input",
+              "fd:viewType": "employee-search"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "employee-search",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Basic",
+          "name": "basic"
+        },
+        {
+          "...": "../../models/form-common/_basic-input-placeholder-fields.json#/fields"
+        },
+        {
+          "...": "../../models/form-common/_basic-input-default-value-fields.json#/fields"
+        },
+        {
+          "component": "boolean",
+          "name": "multiLine",
+          "label": "Allow multiple lines",
+          "valueType": "boolean"
+        },
+        {
+          "component": "tab",
+          "label": "Validation",
+          "name": "validation"
+        },
+        {
+          "...": "../../models/form-common/_string-validation-fields.json#/fields"
+        },
+        {
+          "...": "../../models/form-common/_help-container.json#/fields"
+        }
+      ]
+    }
+  ]
+}
