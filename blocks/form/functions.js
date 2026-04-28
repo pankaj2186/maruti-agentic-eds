@@ -229,6 +229,7 @@ function mobileBrowser() {
   var userAgent = navigator.userAgent || navigator.vendor || window.opera;
   var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
   var isSmallScreen = window.innerWidth <= 768;
+  console.log("isMobile :"+isMobile);
   return isMobile || isSmallScreen;
 }
 
