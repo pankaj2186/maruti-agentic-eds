@@ -3,8 +3,8 @@
     --label-color: #666;
     --border-color: #818a91;
     --form-error-color: #ff5f3f;
-    --button-primary-color: #5F8DDA;
-    --button-secondary-color: #666;
+    --button-primary-color: #2b3395;
+    --button-secondary-color: #7a84f7;
     --button-primary-hover-color: #035fe6;
     --form-font-size-m: 22px;
     --form-font-size-s: 18px;
@@ -552,6 +552,8 @@ main .file-wrapper .file-description button::after{
 
 main .form .button-wrapper button {
     cursor:pointer
+    align-self: end;
+    margin-bottom: 1rem;
 }
 
 main .form .button-wrapper button:hover {
