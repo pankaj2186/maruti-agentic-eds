@@ -258,5 +258,6 @@ export {
   initCibilFlow,
   populateVariants,
   populateColors,
-  mobileBrowser
+  mobileBrowser,
+  setSerialNumber
 };
