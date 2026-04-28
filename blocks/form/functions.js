@@ -222,10 +222,10 @@ function populateColors(selectedModel, colorDropdown, globals) {
 
 /**
  * Checks if the form is opened on a mobile browser.
- * @name isMobileBrowser Detect Mobile Browser
+ * @name mobileBrowser Detect Mobile Browser
  * @returns {boolean} true if mobile browser, false if desktop
  */
-function isMobileBrowser() {
+function mobileBrowser() {
   var userAgent = navigator.userAgent || navigator.vendor || window.opera;
   var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
   var isSmallScreen = window.innerWidth <= 768;
@@ -257,5 +257,5 @@ export {
   initCibilFlow,
   populateVariants,
   populateColors,
-  isMobileBrowser
+  mobileBrowser
 };
