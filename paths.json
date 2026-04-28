@@ -1,17 +1,17 @@
 {
   "mappings": [
     "/content/forms/af/maruti-demo/:/content/forms/af/maruti-demo/",
-    "/content/maruti-site/language-masters/en:/",
-    "/content/maruti-site/language-masters/en/:/en/",
-    "/content/maruti-site/language-masters/fr/:/fr/",
-    "/content/maruti-site/language-masters/fr:/fr",
-    "/content/maruti-site/configuration:/.helix/config.json",
-    "/content/maruti-site/metadata:/metadata.json",
-    "/content/maruti-site/redirects:/redirects.json",
-    "/content/maruti-site/placeholders:/placeholders.json"
+    "/content/maruti-suzuki/language-masters/en:/",
+    "/content/maruti-suzuki/language-masters/en/:/en/",
+    "/content/maruti-suzuki/language-masters/fr/:/fr/",
+    "/content/maruti-suzuki/language-masters/fr:/fr",
+    "/content/maruti-suzuki/configuration:/.helix/config.json",
+    "/content/maruti-suzuki/metadata:/metadata.json",
+    "/content/maruti-suzuki/redirects:/redirects.json",
+    "/content/maruti-suzuki/placeholders:/placeholders.json"
   ],
   "includes": [
-    "/content/dam/maruti-site/",
+    "/content/dam/maruti-suzuki/",
     "/content/forms/af/maruti-demo/"
   ]
 }
