@@ -17,7 +17,7 @@
     --form-invalid-border-color: #ff5f3f;
     --form-input-padding: 0.75rem 0.6rem;
     --form-input-font-size: 1rem;
-    --form-input-disable-color: #ebebe4;
+    --form-input-disable-color: #c8e6c9;
     --form-input-border-size: 1px;
     --form-input-border-color: var(--border-color);
     --form-input-background-color: var(--background-color-primary);
@@ -57,6 +57,11 @@
     --form-wizard-step-legend-padding: 10px;
     --form-wizard-step-legend-font-size: 1.1rem;
     --form-field-gap: 5px;
+
+    /* Required, disabled/readonly, and repeatable panel styling */
+    --form-required-field-background: #fffacd;
+    --form-repeatable-border-color: #000080;
+    --form-repeatable-fieldset-border-size: 1px;
     
     /* Card styling variables */
     --form-card-border-color: #e0e0e0;
@@ -119,6 +124,14 @@ main .form form fieldset fieldset {
     padding: 0;
 }
 
+/**
+ * Repeatable fieldset — thin navy blue border
+ */
+main .form form fieldset[data-repeatable="true"] {
+    border: var(--form-repeatable-fieldset-border-size) solid var(--form-repeatable-border-color);
+    padding: 0.5rem;
+}
+
 main .form .field-description {
     color: var(--form-label-color);
     font-size: var(--form-font-size-xs);
@@ -176,7 +189,28 @@ main .form input:hover, main .form select:hover {
     border-color: rgb(90 92 96);
 }
 
-main .form input:disabled{
+/**
+ * Mandatory / required fields — light yellow background
+ */
+main .form .field-wrapper[data-required="true"] input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="hidden"]),
+main .form .field-wrapper[data-required="true"] textarea,
+main .form .field-wrapper[data-required="true"] select,
+main .form input[required]:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="hidden"]),
+main .form textarea[required],
+main .form select[required] {
+    background-color: var(--form-required-field-background);
+}
+
+/**
+ * Disabled and read-only fields — green background (overrides required yellow)
+ */
+main .form input:disabled,
+main .form textarea:disabled,
+main .form select:disabled,
+main .form button:disabled,
+main .form input[readonly],
+main .form textarea[readonly],
+main .form select[readonly] {
     background-color: var(--form-input-disable-color);
 }
 
@@ -435,12 +469,6 @@ main .submit-wrapper{
     width: var(--form-submit-width);
 }
 
-main .form textarea:disabled,
-main .form select:disabled,
-main .form button:disabled {
-    background-color: var(--form-input-disable-color);
-}
-
 main .file-wrapper.decorated input[type="file"] {
     display: none;
 }
@@ -644,6 +672,9 @@ main .form form .repeat-wrapper{
     display: grid;
     grid-template-columns: repeat(var(--form-columns), minmax(0, 1fr));
     gap: var(--form-field-vert-gap) var(--form-field-horz-gap);
+    border: 2px solid var(--form-repeatable-border-color);
+    padding: 0.75rem;
+    box-sizing: border-box;
 }
 
 main .form form .wizard.left .panel-wrapper{
