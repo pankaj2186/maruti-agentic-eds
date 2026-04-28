@@ -3,7 +3,6 @@ const marutiCarModels = [
   {
     id: 'NEW CELERIO',
     name: 'New Celerio',
-    source: '/content/dam/forms-poc/maruti/celerio.png',
     variants: ['LXi', 'VXi', 'ZXi', 'ZXi+', 'VXi CNG'],
     colors: [
       'Solid Fire Red',
@@ -17,7 +16,6 @@ const marutiCarModels = [
   {
     id: 'NEW ERTIGA',
     name: 'New Ertiga',
-    source: '/content/dam/forms-poc/maruti/ertiga.png',
     variants: ['LXi', 'VXi', 'ZXi', 'ZXi+', 'VXi CNG', 'ZXi CNG'],
     colors: [
       'Pearl Metallic Auburn Red',
@@ -31,7 +29,6 @@ const marutiCarModels = [
   {
     id: 'NEW SWIFT',
     name: 'New Swift',
-    source: '/content/dam/forms-poc/maruti/swift.png',
     variants: [
       'LXi',
       'VXi',
@@ -53,7 +50,6 @@ const marutiCarModels = [
   {
     id: 'NEW WAGONR',
     name: 'New Wagon R',
-    source: '/content/dam/forms-poc/maruti/wagon-r.png',
     variants: ['LXi 1.0', 'VXi 1.0', 'ZXi 1.2', 'ZXi+ 1.2', 'VXi CNG'],
     colors: [
       'Poolside Blue',
@@ -67,7 +63,6 @@ const marutiCarModels = [
   {
     id: 'S_PRESSO',
     name: 'S-Presso',
-    source: '/content/dam/forms-poc/maruti/s-presso.png',
     variants: ['Std', 'LXi', 'VXi', 'VXi+', 'VXi CNG'],
     colors: [
       'Solid Fire Red',
@@ -81,7 +76,6 @@ const marutiCarModels = [
   {
     id: 'VICTORIS',
     name: 'Victoris (Arena SUV)', // or 'New Victoris' per your copy
-    source: '/content/dam/forms-poc/maruti/victoris.png',
     variants: [
       'LXi',
       'VXi',
