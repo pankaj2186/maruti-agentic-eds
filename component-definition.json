@@ -941,7 +941,23 @@
               }
             }
           }
-        }
+        },
+				{
+		      "title": "Employee search",
+		      "id": "employee-search",
+		      "plugins": {
+		        "xwalk": {
+		          "page": {
+		            "resourceType": "core/fd/components/form/textinput/v1/textinput",
+		            "template": {
+		              "jcr:title": "Employee search",
+		              "fieldType": "text-input",
+		              "fd:viewType": "employee-search"
+		            }
+		          }
+		        }
+		      }
+		    }
       ]
     },
 		{
