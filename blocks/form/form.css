@@ -28,7 +28,7 @@
     --form-field-horz-gap: 24px;
     --form-field-vert-gap: 8px;
     --form-invalid-border-color: var(--brand-error);
-    --form-input-padding: 0.625rem 0.75rem;
+    --form-input-padding: 0.5rem 0.75rem;
     --form-input-font-size: 0.875rem;
     --form-input-disable-color: #c8e6c9;
     --form-input-border-size: 1px;
