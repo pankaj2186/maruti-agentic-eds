@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p46206-e1977694.adobeaemcloud.com//bin/franklin.delivery/pankaj2186/maruti-agentic-eds/main"
+    url: "https://author-p46206-e1977694.adobeaemcloud.com/bin/franklin.delivery/pankaj2186/maruti-agentic-eds/main"
     type: "markup"
     suffix: ".html"

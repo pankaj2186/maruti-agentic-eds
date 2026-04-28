@@ -109,6 +109,7 @@ function setSerialNumber(serialField, globals) {
   globals.functions.setProperty(serialField, { value: index + 1 });
   return String(index + 1);
 }
+
 /**
  * Populate variant dropdown based on selected car model from marutiCarModels.
  * @name populateVariants
