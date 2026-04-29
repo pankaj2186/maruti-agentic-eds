@@ -8,6 +8,7 @@
     "/content/maruti-suzuki/placeholders:/placeholders.json"
   ],
   "includes": [
+    "/content/maruti-suzuki/",
     "/content/dam/maruti-suzuki/",
     "/content/forms/af/maruti-demo/"
   ]
