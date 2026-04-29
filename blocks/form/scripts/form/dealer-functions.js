@@ -225,6 +225,18 @@ var qp = {};
 }
 
 /**
+ * Generates a random enquiry number and sets it in the given field.
+ * @name setEnquiryNumber Set Enquiry Number
+ * @param {object} enquiryField
+ * @param {scope} globals
+ */
+function setEnquiryNumber(enquiryField, globals) {
+  var digits = Math.floor(100000 + Math.random() * 900000);
+  var enqNumber = 'ENQ26' + digits;
+  globals.functions.setProperty(enquiryField, { value: enqNumber });
+}
+
+/**
  * Checks if the form is opened on a mobile browser.
  * @name mobileBrowser Detect Mobile Browser
  * @returns {boolean} true if mobile browser, false if desktop
@@ -242,5 +254,6 @@ export {
   populateVariants,
   populateColors,
   mobileBrowser,
-  prefillFromQueryParams
+  prefillFromQueryParams,
+  setEnquiryNumber
 };
