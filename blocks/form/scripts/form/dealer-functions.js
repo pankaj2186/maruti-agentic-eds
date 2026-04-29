@@ -168,31 +168,24 @@ function populateColors(selectedModel, colorDropdown, globals) {
  * @param {scope} globals
  */
 function prefillFromQueryParams(firstNameField, lastNameField, modelField, mobileField, emailField, genderField, panField, regNumberField, globals) {
-// Debug: find where queryParams lives
-  console.log('globals.form keys:', Object.keys(globals.form));
-  console.log('globals.form.$properties:', globals.form.$properties);
-  console.log('globals.form.properties:', globals.form.properties);
-
-  // Try alternate paths
-  var qp = null;
-  if (globals.form.$properties && globals.form.$properties.queryParams) {
-    qp = globals.form.$properties.queryParams;
-    console.log('Found at $properties.queryParams');
-  } else if (globals.form.properties && globals.form.properties.queryParams) {
-    qp = globals.form.properties.queryParams;
-    console.log('Found at properties.queryParams');
+var qp = {};
+  try {
+    qp = globals.form.$properties.queryParams || {};
+  } catch(e) {
+    try {
+      qp = globals.form.properties.queryParams || {};
+    } catch(e2) {
+      // not available
+    }
   }
 
-  console.log('queryParams:', qp);
-  
-  var urlParams = new URLSearchParams(globalThis.location.search);
-  var name      = urlParams.get('n');
-  var model     = urlParams.get('m');
-  var phone     = urlParams.get('p');
-  var email     = urlParams.get('e');
-  var gender    = urlParams.get('g');
-  var pan       = urlParams.get('pan');
-  var regnumber = urlParams.get('r');
+  var name      = qp['n'] || '';
+  var model     = qp['m'] || '';
+  var phone     = qp['p'] || '';
+  var email     = qp['e'] || '';
+  var gender    = qp['g'] || '';
+  var pan       = qp['pan'] || '';
+  var regnumber = qp['r'] || '';
 
   // Split name into firstName and lastName
   if (name) {
