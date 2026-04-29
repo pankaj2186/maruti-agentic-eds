@@ -1,6 +1,5 @@
 {
   "mappings": [
-    "/content/forms/af/maruti-demo/:/content/forms/af/maruti-demo/",
     "/content/maruti-suzuki/language-masters/en:/",
     "/content/maruti-suzuki/language-masters/en/:/en/",
     "/content/maruti-suzuki/configuration:/.helix/config.json",
