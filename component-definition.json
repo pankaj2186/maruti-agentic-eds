@@ -1048,24 +1048,6 @@
       "id": "custom-components",
       "components": [
         {
-          "title": "Employer Search",
-          "id": "employer-search",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/fd/components/form/textinput/v1/textinput",
-                "template": {
-                  "jcr:title": "Employer Search",
-                  "fieldType": "text-input",
-                  "fd:viewType": "employer-search",
-                  "visible": true,
-                  "enabled": true
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Employee Table",
           "id": "employee-table",
           "plugins": {
