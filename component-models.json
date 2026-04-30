@@ -4903,43 +4903,6 @@
     ]
   },
   {
-    "id": "employer-search",
-    "fields": [
-      {
-        "component": "tab",
-        "label": "Basic",
-        "name": "basic"
-      },
-      {
-        "component": "text",
-        "name": "name",
-        "label": "Name",
-        "valueType": "string",
-        "required": true
-      },
-      {
-        "component": "text",
-        "name": "jcr:title",
-        "label": "Label",
-        "valueType": "string"
-      },
-      {
-        "component": "boolean",
-        "name": "visible",
-        "label": "Show Component",
-        "valueType": "boolean",
-        "value": true
-      },
-      {
-        "component": "boolean",
-        "name": "enabled",
-        "label": "Enable Component",
-        "valueType": "boolean",
-        "value": true
-      }
-    ]
-  },
-  {
     "id": "modal",
     "fields": [
       {
