@@ -293,5 +293,5 @@ export {
   prefillFromQueryParams,
   setEnquiryNumber,
   fetchFromQueryParams,
-  getEmpProperty
+  getJsonPropertyValue
 };
