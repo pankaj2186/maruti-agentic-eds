@@ -56,7 +56,7 @@ export default function decorate(fieldDiv, fieldJson) {
         if (selectedRow) selectedRow.classList.remove('selected');
         tr.classList.add('selected');
         selectedRow = tr;
-        input.value = emp.empCode ?? '';
+        input.value = JSON.stringify(emp);
         input.dispatchEvent(new Event('change', { bubbles: true }));
       };
 
