@@ -153,9 +153,7 @@ function populateColors(selectedModel, colorDropdown, globals) {
 }
 
 /**
- * Get Query Parameter.
- * Call this on any field whose value needs to be set from query param.
- *
+ * Fetch Query Parameter.
  * @name fetchFromQueryParams Fetch From Query Params
  * @param {string} paramName     // parameter name available in query param
  * @param {scope} globals
