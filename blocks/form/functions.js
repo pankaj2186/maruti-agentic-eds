@@ -20,7 +20,7 @@ import {validateKycDocumentNumber,
   import {populateVariants,
     populateColors,
     mobileBrowser,
-    setSerialNumber, prefillFromQueryParams, setEnquiryNumber, fetchFromQueryParams} from './scripts/form/dealer-functions.js';
+    setSerialNumber, prefillFromQueryParams, setEnquiryNumber, fetchFromQueryParams, getEmpProperty} from './scripts/form/dealer-functions.js';
 
 /**
  * Get Full Name
@@ -95,5 +95,6 @@ export {
   setSerialNumber,
   prefillFromQueryParams,
   setEnquiryNumber,
-  fetchFromQueryParams
+  fetchFromQueryParams,
+  getEmpProperty
 };
