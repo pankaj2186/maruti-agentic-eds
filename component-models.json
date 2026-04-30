@@ -5329,6 +5329,105 @@
     ]
   },
   {
+    "id": "employee-table",
+    "fields": [
+      {
+        "component": "tab",
+        "label": "Basic",
+        "name": "basic"
+      },
+      {
+        "component": "text",
+        "name": "name",
+        "label": "Name",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "jcr:title",
+        "label": "Label",
+        "valueType": "string"
+      },
+      {
+        "component": "boolean",
+        "name": "hideTitle",
+        "label": "Hide Label",
+        "valueType": "boolean"
+      },
+      {
+        "component": "boolean",
+        "name": "visible",
+        "label": "Show Component",
+        "valueType": "boolean",
+        "value": true
+      },
+      {
+        "component": "boolean",
+        "name": "enabled",
+        "label": "Enable Component",
+        "valueType": "boolean",
+        "value": true
+      },
+      {
+        "component": "select",
+        "name": "colspan",
+        "label": "Column Span",
+        "valueType": "string",
+        "value": "12",
+        "options": [
+          {
+            "name": "4 columns",
+            "value": "4"
+          },
+          {
+            "name": "6 columns",
+            "value": "6"
+          },
+          {
+            "name": "8 columns",
+            "value": "8"
+          },
+          {
+            "name": "12 columns",
+            "value": "12"
+          }
+        ]
+      },
+      {
+        "component": "tab",
+        "label": "Data Source",
+        "name": "datasource"
+      },
+      {
+        "component": "text",
+        "name": "dataEndpoint",
+        "label": "Data Endpoint URL",
+        "valueType": "string",
+        "description": "URL returning a JSON array of employees with fields: empCode, empName, desgCode, desgDesc"
+      },
+      {
+        "component": "text",
+        "name": "searchPlaceholder",
+        "label": "Search Placeholder",
+        "valueType": "string",
+        "value": "Search employees...",
+        "description": "Placeholder text shown in the search box"
+      },
+      {
+        "component": "tab",
+        "label": "Help",
+        "name": "help"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "label": "Help text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "modal",
     "fields": [
       {

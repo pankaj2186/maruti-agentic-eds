@@ -35,6 +35,9 @@
     },
     { 
       "...": "./components/wizard/_wizard.json#/definitions" 
+    },
+    {
+      "...": "./components/employee-table/_employee-table.json#/definitions"
     }
   ],
   "models": [
@@ -56,6 +59,9 @@
     },
     {
       "...": "./components/*/_*.json#/models"
+    },
+    {
+      "...": "./components/employee-table/_employee-table.json#/models"
     }
   ],
   "filters": [
@@ -68,6 +74,7 @@
         "date-input",
         "drop-down",
         "email",
+        "employee-table",
         "file-input",
         "form-accordion",
         "form-button",
