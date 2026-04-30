@@ -18,23 +18,26 @@
     {
       "...": "./models/form-components/_*.json#/definitions"
     },
-    { 
-      "...": "./components/accordion/_accordion.json#/definitions" 
+    {
+      "...": "./components/accordion/_accordion.json#/definitions"
     },
-    { 
-      "...": "./components/modal/_modal.json#/definitions" 
+    {
+      "...": "./components/modal/_modal.json#/definitions"
     },
-    { 
-      "...": "./components/password/_password.json#/definitions" 
+    {
+      "...": "./components/password/_password.json#/definitions"
     },
-    { 
-      "...": "./components/rating/_rating.json#/definitions" 
+    {
+      "...": "./components/rating/_rating.json#/definitions"
     },
-    { 
-      "...": "./components/tnc/_tnc.json#/definitions" 
+    {
+      "...": "./components/tnc/_tnc.json#/definitions"
     },
-    { 
-      "...": "./components/wizard/_wizard.json#/definitions" 
+    {
+      "...": "./components/wizard/_wizard.json#/definitions"
+    },
+    {
+      "...": "./components/employee-table/_employee-table.json#/definitions"
     }
   ],
   "models": [
@@ -56,6 +59,9 @@
     },
     {
       "...": "./components/*/_*.json#/models"
+    },
+    {
+      "...": "./components/employee-table/_employee-table.json#/models"
     }
   ],
   "filters": [
@@ -68,6 +74,8 @@
         "date-input",
         "drop-down",
         "email",
+        "employee-table",
+        "employer-search",
         "file-input",
         "form-accordion",
         "form-button",
@@ -81,12 +89,12 @@
         "password",
         "plain-text",
         "radio-group",
+        "range",
         "rating",
         "telephone-input",
         "text-input",
         "tnc",
-        "wizard",
-        "range"
+        "wizard"
       ]
     }
   ]

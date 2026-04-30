@@ -1,0 +1,61 @@
+{
+  "definitions": [
+    {
+      "title": "Employer Search",
+      "id": "employer-search",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/fd/components/form/textinput/v1/textinput",
+            "template": {
+              "jcr:title": "Employer Search",
+              "fieldType": "text-input",
+              "fd:viewType": "employer-search",
+              "visible": true,
+              "enabled": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "employer-search",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Basic",
+          "name": "basic"
+        },
+        {
+          "component": "text",
+          "name": "name",
+          "label": "Name",
+          "valueType": "string",
+          "required": true
+        },
+        {
+          "component": "text",
+          "name": "jcr:title",
+          "label": "Label",
+          "valueType": "string"
+        },
+        {
+          "component": "boolean",
+          "name": "visible",
+          "label": "Show Component",
+          "valueType": "boolean",
+          "value": true
+        },
+        {
+          "component": "boolean",
+          "name": "enabled",
+          "label": "Enable Component",
+          "valueType": "boolean",
+          "value": true
+        }
+      ]
+    }
+  ]
+}

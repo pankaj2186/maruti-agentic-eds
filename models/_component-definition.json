@@ -35,6 +35,18 @@
           "...": "../blocks/*/_*.json#/definitions"
         }
       ]
+    },
+    {
+      "title": "Custom Form Components",
+      "id": "custom-components",
+      "components": [
+        {
+          "...": "../blocks/form/components/employer-search/_employer-search.json#/definitions"
+        },
+        {
+          "...": "../blocks/form/components/employee-table/_employee-table.json#/definitions"
+        }
+      ]
     }
   ]
 }
