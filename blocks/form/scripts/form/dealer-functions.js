@@ -275,13 +275,13 @@ function mobileBrowser() {
 
 /**                                                                                                                                                                                                                               
 * Get JSON Property                                                                                                                                                                                                                 
-* @name getJsonPropertyValue Extracts a property value from an JSON string                                                                                                                                                    
+* @name fetchJsonProperty Extracts a property value from an JSON string                                                                                                                                                    
 * @param {string} jsonString JSON string representing the object                                                                                                                                               
 * @param {string} key Property key to extract (e.g. "empCode", "empName", "desgCode", "desgDesc")    
 * @param {scope} globals
 * @return {string}                                                                                                                                                                                                               
 */                                                                                                                                                                                                                               
-function getJsonPropertyValue(jsonString, key, globals) {                                                                                                                                                                                                                           
+function fetchJsonProperty(jsonString, key, globals) {                                                                                                                                                                                                                           
     const emp = JSON.parse(jsonString);                                                                                                                                                                                           
     return emp[key] ?? '';                                                                                                                                                                                                                                                                                                                                                                                                                             
 }       
@@ -294,5 +294,5 @@ export {
   prefillFromQueryParams,
   setEnquiryNumber,
   fetchFromQueryParams,
-  getJsonPropertyValue
+  fetchJsonProperty
 };
