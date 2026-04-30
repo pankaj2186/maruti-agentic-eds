@@ -153,6 +153,32 @@ function populateColors(selectedModel, colorDropdown, globals) {
 }
 
 /**
+ * Get Query Parameter.
+ * Call this on any field whose value needs to be set from query param.
+ *
+ * @name fetchFromQueryParams Prefill From Query Params
+ * @param {string} paramName     // parameter name available in query param
+ * @param {scope} globals
+ * @returns {string}
+ */
+function fetchFromQueryParams(paramName, globals) {
+ var qp = {};
+  try {
+    qp = globals.form.$properties.queryParams || {};
+  } catch(e) {
+    try {
+      qp = globals.form.properties.queryParams || {};
+    } catch(e2) {
+      // not available
+    }
+  }
+  // keys are lowercased by addRequestContextToForm
+  var key = paramName ? paramName.toLowerCase() : '';
+  return qp[key] || '';
+}
+
+
+/**
  * Prefill form fields from URL query parameters.
  * Call this on the form's "initialize" event.
  *
@@ -255,5 +281,6 @@ export {
   populateColors,
   mobileBrowser,
   prefillFromQueryParams,
-  setEnquiryNumber
+  setEnquiryNumber,
+  fetchFromQueryParams
 };
