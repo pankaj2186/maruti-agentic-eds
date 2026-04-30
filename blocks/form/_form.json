@@ -18,20 +18,20 @@
     {
       "...": "./models/form-components/_*.json#/definitions"
     },
-    { 
-      "...": "./components/accordion/_accordion.json#/definitions" 
+    {
+      "...": "./components/accordion/_accordion.json#/definitions"
     },
-    { 
-      "...": "./components/modal/_modal.json#/definitions" 
+    {
+      "...": "./components/modal/_modal.json#/definitions"
     },
-    { 
-      "...": "./components/password/_password.json#/definitions" 
+    {
+      "...": "./components/password/_password.json#/definitions"
     },
-    { 
-      "...": "./components/rating/_rating.json#/definitions" 
+    {
+      "...": "./components/rating/_rating.json#/definitions"
     },
-    { 
-      "...": "./components/tnc/_tnc.json#/definitions" 
+    {
+      "...": "./components/tnc/_tnc.json#/definitions"
     },
     { 
       "...": "./components/wizard/_wizard.json#/definitions" 
@@ -88,12 +88,12 @@
         "password",
         "plain-text",
         "radio-group",
+        "range",
         "rating",
         "telephone-input",
         "text-input",
         "tnc",
-        "wizard",
-        "range"
+        "wizard"
       ]
     }
   ]
