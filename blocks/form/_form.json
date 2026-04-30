@@ -33,8 +33,8 @@
     {
       "...": "./components/tnc/_tnc.json#/definitions"
     },
-    {
-      "...": "./components/wizard/_wizard.json#/definitions"
+    { 
+      "...": "./components/wizard/_wizard.json#/definitions" 
     },
     {
       "...": "./components/employee-table/_employee-table.json#/definitions"
@@ -75,7 +75,6 @@
         "drop-down",
         "email",
         "employee-table",
-        "employer-search",
         "file-input",
         "form-accordion",
         "form-button",
