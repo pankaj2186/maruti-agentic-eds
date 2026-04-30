@@ -275,6 +275,18 @@ function mobileBrowser() {
   return isMobile;
 }
 
+/**                                                                                                                                                                                                                               
+* Get JSON Property                                                                                                                                                                                                                 
+* @name getEmpProperty Extracts a property value from an employee JSON string                                                                                                                                                    
+* @param {string} jsonString JSON string representing the selected employee object                                                                                                                                               
+* @param {string} key Property key to extract (e.g. "empCode", "empName", "desgCode", "desgDesc")                                                                                                                                
+* @return {string}                                                                                                                                                                                                               
+*/                                                                                                                                                                                                                               
+function getEmpProperty(jsonString, key, globals) {                                                                                                                                                                                                                           
+    const emp = JSON.parse(jsonString);                                                                                                                                                                                           
+    return emp[key] ?? '';                                                                                                                                                                                                                                                                                                                                                                                                                             
+}       
+
 export {
   setSerialNumber,
   populateVariants,
@@ -282,5 +294,6 @@ export {
   mobileBrowser,
   prefillFromQueryParams,
   setEnquiryNumber,
-  fetchFromQueryParams
+  fetchFromQueryParams,
+  getEmpProperty
 };
