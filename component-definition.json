@@ -481,6 +481,24 @@
           }
         },
         {
+          "title": "Employee Table",
+          "id": "employee-table",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/fd/components/form/textinput/v1/textinput",
+                "template": {
+                  "jcr:title": "Employee Table",
+                  "fieldType": "text-input",
+                  "fd:viewType": "employee-table",
+                  "visible": true,
+                  "enabled": true
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Fragment",
           "id": "fragment",
           "plugins": {
