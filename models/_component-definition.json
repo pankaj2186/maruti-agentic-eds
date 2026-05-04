@@ -28,6 +28,15 @@
       ]
     },
     {
+      "title": "Forms",
+      "id": "form-components",
+      "components": [
+        {
+          "...": "../blocks/form/_*.json#/definitions"
+        }
+      ]
+    },
+    {
       "title": "Blocks",
       "id": "blocks",
       "components": [
@@ -41,7 +50,10 @@
       "id": "custom-components",
       "components": [
         {
-          "...": "../blocks/form/components/employee-table/_employee-table.json#/definitions"
+          "...": "../components/employee-table/_employee-table.json#/definitions"
+        },
+        {
+          "...": "../components/range/_range.json#/definitions"
         }
       ]
     }
