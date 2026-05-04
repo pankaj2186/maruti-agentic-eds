@@ -20,7 +20,7 @@ import {validateKycDocumentNumber,
   import {populateVariants,
     populateColors,
     mobileBrowser,
-    setSerialNumber, prefillFromQueryParams, setEnquiryNumber, fetchFromQueryParams, fetchJsonProperty} from './scripts/form/dealer-functions.js';
+    setSerialNumber, prefillFromQueryParams, setEnquiryNumber, fetchFromQueryParams, fetchJsonProperty, maskAadhaar} from './scripts/form/dealer-functions.js';
 
 /**
  * Get Full Name
@@ -96,5 +96,6 @@ export {
   prefillFromQueryParams,
   setEnquiryNumber,
   fetchFromQueryParams,
-  fetchJsonProperty
+  fetchJsonProperty,
+  maskAadhaar
 };
