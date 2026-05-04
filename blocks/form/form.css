@@ -157,7 +157,7 @@ main .form .file-description { display: flex; gap: 16px; align-items: center; ma
 main .form .file-description .file-description-name { cursor: pointer; text-decoration: underline; flex: 1; color: var(--brand-primary); }
 main .file-wrapper .file-description button { --form-button-padding: 15px; width: 12px; height: 12px; border: none; text-align: center; background: var(--brand-text-light); cursor: pointer; position: relative; border-radius: 3px; }
 main .file-wrapper .file-description button::after { content: 'X'; position: absolute; top: 50%; left: 50%; color: var(--brand-white); transform: translate(-50%, -50%); font-size: 10px; }
-main .form .button-wrapper button { cursor: pointer; }
+main .form .button-wrapper button { cursor: pointer; text-align: center;}
 main .form .button-wrapper button:hover { border: none; color: var(--brand-white); background-color: var(--brand-primary-light); }
 main .form .button-wrapper button[disabled] { cursor: not-allowed; opacity: 0.5; }
 main .form .button-wrapper button[disabled]:hover { border: none; background-color: var(--brand-primary); opacity: 0.5; }
