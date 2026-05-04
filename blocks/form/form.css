@@ -205,3 +205,33 @@ main div.form-wrapper { background: var(--brand-white); padding: 32px; border-ra
 @media (width <= 768px) { :root { --form-field-horz-gap: 12px; --form-field-vert-gap: 6px; --form-button-padding: 10px 20px; } main .form form .field-wrapper.col-1, main .form form .field-wrapper.col-2, main .form form .field-wrapper.col-3, main .form form .field-wrapper.col-4, main .form form .field-wrapper.col-5, main .form form .field-wrapper.col-6, main .form form .field-wrapper.col-7, main .form form .field-wrapper.col-8, main .form form .field-wrapper.col-9, main .form form .field-wrapper.col-10, main .form form .field-wrapper.col-11 { grid-column: span 12; } main .form form .repeat-wrapper { padding: 10px; } main div.form-wrapper { padding: 16px; border-radius: 6px; } main .form form .wizard .wizard-button-wrapper { gap: 12px; } .wizard-menu-items { gap: 16px; } }
 @media (width <= 480px) { :root { --form-field-horz-gap: 8px; --form-field-vert-gap: 4px; --form-font-size-s: 13px; --form-font-size-xs: 11px; --form-button-padding: 10px 16px; --form-input-padding: 0.5rem 0.625rem; } main .form form { gap: var(--form-field-vert-gap) var(--form-field-horz-gap); } main .form button { width: 100%; } main div.form-wrapper { padding: 12px; box-shadow: 0 2px 8px rgb(0 0 0 / 5%); } .wizard-menu-items { flex-direction: column; gap: 10px; } main .form form .wizard .wizard-button-wrapper { flex-direction: column; gap: 8px; } }
 main .form form select[multiple] { height: calc(38px + 50px); }
+
+/* Picker Button – compact icon-only style */
+main .form .button-wrapper [name*="PickerButton"] {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  padding: 0;
+  font-size: 0;
+  color: transparent;
+  border-radius: 8px;
+  background: #ccc; /* button base color */
+  position: relative;
+}
+
+main .form .button-wrapper [name*="PickerButton"]:hover {
+  background-color: #aaa;
+}
+
+/* Keep the wrapper column narrow so it doesn't take extra space */
+main .form .button-wrapper [name*="PickerButton"]::before {
+  content: "";
+  position: absolute;
+  top: 8px; /* move above button */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23001f3f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E") no-repeat center;
+  background-size: contain;
+}
