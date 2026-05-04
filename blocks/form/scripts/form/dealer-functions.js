@@ -286,6 +286,20 @@ function fetchJsonProperty(jsonString, key, globals) {
     return emp[key] ?? '';                                                                                                                                                                                                                                                                                                                                                                                                                             
 }       
 
+/**
+ * Masks an Aadhaar card number, keeping only the last 4 digits visible.
+ * @name maskAadhaar Mask Aadhaar Number
+ * @param {string} aadhaarNumber - 12-digit Aadhaar number (with or without spaces)
+ * @returns {string} Masked number in format: **** **** 1234
+ */
+function maskAadhaar(aadhaarNumber) {
+  if (!aadhaarNumber) return '';
+  const digits = String(aadhaarNumber).replace(/[\s-]/g, '');
+  if (digits.length !== 12 || !/^\d{12}$/.test(digits)) return aadhaarNumber;
+  const masked = '****' + '****' + digits.slice(-4);
+  return masked.replace(/(.{4})(.{4})(.{4})/, '$1 $2 $3');
+}
+
 export {
   setSerialNumber,
   populateVariants,
@@ -294,5 +308,6 @@ export {
   prefillFromQueryParams,
   setEnquiryNumber,
   fetchFromQueryParams,
-  fetchJsonProperty
+  fetchJsonProperty,
+  maskAadhaar
 };
