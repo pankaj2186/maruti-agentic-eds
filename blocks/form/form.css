@@ -208,19 +208,25 @@ main .form form select[multiple] { height: calc(38px + 50px); }
 
 /* Picker Button – compact icon-only style */
 main .form .button-wrapper [name*="PickerButton"] {
-  width: 38px;
-  height: 38px;
-  min-width: 38px;
-  padding: 0;
-  font-size: 0;
-  color: transparent;
-  border-radius: 8px;
-  background: #ccc; /* button base color */
-  position: relative;
+    width: 45px;
+    border-color: #1818b6;
+    height: 38px;
+    min-width: 38px;
+    border-width: 1px;
+    border-style: solid;
+    padding: 0;
+    font-size: 0;
+    color: transparent;
+    border-radius: 8px;
+    background: #6365d42b;
+    position: relative;
 }
 
 main .form .button-wrapper [name*="PickerButton"]:hover {
-  background-color: #aaa;
+    border-style: solid;
+    background-color: #fcf8f8;
+    border-color: black;
+    border-width: 1px;
 }
 
 /* Keep the wrapper column narrow so it doesn't take extra space */
