@@ -11,66 +11,84 @@
         "component": "text",
         "valueType": "string",
         "name": "jcr:title",
-        "label": "Title",
-        "required": true
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "jcr:pagetitle",
-        "label": "Page Title",
-        "required": true
+        "label": "Title"
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "jcr:description",
-        "label": "Description",
-        "required": true
+        "label": "Description"
+      },
+      {
+        "component": "aem-content-fragment",
+        "name": "theme_cf_reference",
+        "label": "Brand Theme",
+        "description": "Select the CF with authored values for the brand theme. This will be applied on the pages",
+        "valueType": "string",
+        "validation": {
+            "rootPath": "/content/dam"
+        }
+      },
+      {
+          "component": "select",
+          "name": "theme",
+          "label": "Theme",
+          "description": "Note: This takes priority over CF based theme.",
+
+          "options": [
+            {
+              "name": "default",
+              "value": ""
+            },
+            {
+              "name": "Gray Theme",
+              "value": "gray-theme"
+            },
+            {
+              "name": "Red Theme",
+              "value": "red-theme"
+            },
+            {
+              "name": "Blue Theme",
+              "value": "blue-theme"
+            },
+             {
+              "name": "Green Theme",
+              "value": "green-theme"
+            },
+            {
+              "name": "WeHealthcare Theme",
+              "value": "wehealthcare-theme"
+            }
+          ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "js-files",
+        "multi": true,
+        "value": "",
+        "label": "JS Library URL(s)",
+        "description": "List of js libraries to include under head section of the page"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "jcr:pagetitle",
+        "label": "Page Title"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "pageCategory",
+        "label": "Page Category"
       },
       {
         "component": "aem-tag",
         "name": "cq:tags",
         "label": "Tags",
         "valueType": "string",
-        "rootPath": "/content/cq:tags/world-bank"
-      },
-      {
-        "component": "select",
-        "name": "theme",
-        "label": "Theme",
-        "options": [
-          {
-            "name": "default",
-            "value": ""
-          },
-          {
-            "name": "Mango Haze",
-            "value": "mango-haze"
-          },
-          {
-            "name": "Lavender Chill",
-            "value": "lavender-chill"
-          },
-          {
-            "name": "Meadow Light",
-            "value": "meadow-light"
-          }
-        ]
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pageName",
-        "label": "Page Name",
-        "required": true
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "pageCategory",
-        "label": "Page Category",
-        "required": true
+        "rootPath": "/content/cq:tags/reference-demo"
       }
     ]
   },
@@ -180,15 +198,167 @@
         "description": "The label shown for this section in the Content Tree"
       },
       {
-        "component": "multiselect",
-        "name": "style",
-        "label": "Style",
+        "component": "select",
+        "name": "sec-spacing",
+        "value": "",
+        "label": "Spacing Top (padding top)",
+        "description": "Section top spacing, default is 32px.",
+        "valueType": "string",
         "options": [
           {
-            "name": "Highlight",
-            "value": "highlight"
+            "name": "Default spacing",
+            "value": "sec-spacing-default"
+          },
+          {
+            "name": "No space / padding",
+            "value": "section-none"
+          },
+          {
+            "name": "Spacing tiny",
+            "value": "section-tiny"
+          },
+          {
+            "name": "Spacing xxsmall",
+            "value": "section-xxsmall"
+          },
+          {
+            "name": "Spacing xsmall",
+            "value": "section-xsmall"
+          },
+          {
+            "name": "Spacing regular",
+            "value": "section-regular"
+          },
+          {
+            "name": "Spacing small",
+            "value": "section-small"
+          },
+          {
+            "name": "Spacing medium",
+            "value": "section-medium"
+          },
+          {
+            "name": "Spacing large",
+            "value": "section-large"
+          },
+          {
+            "name": "Spacing xlarge",
+            "value": "section-xlarge"
+          },
+          {
+            "name": "Spacing xxlarge",
+            "value": "section-xxlarge"
+          },
+          {
+            "name": "Spacing huge",
+            "value": "section-huge"
+          },
+          {
+            "name": "Spacing xhuge",
+            "value": "section-xhuge"
           }
         ]
+      },
+      {
+        "component": "select",
+        "name": "sec-spacing-bottom",
+        "value": "",
+        "label": "Spacing Bottom (padding bottom)",
+        "description": "Section bottom spacing, default is 32px.",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default spacing",
+            "value": "sec-spacing-default"
+          },
+          {
+            "name": "No space / padding",
+            "value": "section-none"
+          },
+          {
+            "name": "Spacing tiny",
+            "value": "section-tiny"
+          },
+          {
+            "name": "Spacing xxsmall",
+            "value": "section-xxsmall"
+          },
+          {
+            "name": "Spacing xsmall",
+            "value": "section-xsmall"
+          },
+          {
+            "name": "Spacing regular",
+            "value": "section-regular"
+          },
+          {
+            "name": "Spacing small",
+            "value": "section-small"
+          },
+          {
+            "name": "Spacing medium",
+            "value": "section-medium"
+          },
+          {
+            "name": "Spacing large",
+            "value": "section-large"
+          },
+          {
+            "name": "Spacing xlarge",
+            "value": "section-xlarge"
+          },
+          {
+            "name": "Spacing xxlarge",
+            "value": "section-xxlarge"
+          },
+          {
+            "name": "Spacing huge",
+            "value": "section-huge"
+          },
+          {
+            "name": "Spacing xhuge",
+            "value": "section-xhuge"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "name": "style",
+        "value": "",
+        "label": "Background style",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": "bg-default"
+          },
+          {
+            "name": "Theme Color",
+            "value": "bg-theme"
+          },
+          {
+            "name": "Dark Color",
+            "value": "bg-dark"
+          },
+          {
+            "name": "Light Color",
+            "value": "bg-light"
+          }         
+        ]
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "sec-full-width",
+        "label": "Full section width.",
+        "condition": {
+          "!=": [
+            {
+              "var": "style"
+            },
+            "bg-image"
+          ]
+        }
       }
     ]
   },
