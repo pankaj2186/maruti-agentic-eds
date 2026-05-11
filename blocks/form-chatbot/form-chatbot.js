@@ -1,0 +1,62 @@
+import { readBlockConfig, loadCSS } from '../../scripts/aem.js';
+import renderCardChoice from './card-choice.js';
+import registerSubmitHandler from './submit-handler.js';
+import registerQuestionSync from './question-sync.js';
+
+const PROD_SERVER = 'https://adobe-aem-forms-formfillling-service-deploy-ethos0-b43054.cloud.adobe.io';
+const DEV_SERVER = 'http://localhost:8080';
+
+const DEFAULT_FORMS = [
+  { name: 'Car Sell Enquire', url: 'https://main--maruti-agentic-eds--pankaj2186.aem.live/en/forms/sell-enquiry' },
+  { name: 'Smart Finance', url: 'https://main--maruti-agentic-eds--pankaj2186.aem.live/en/forms/trv-finance-application' },
+  { name: 'Test Drive', url: 'https://www.securbankdemo.com/content/forms/af/securebank/test-drive' },
+];
+
+export default async function decorate(block) {
+  const cfg = readBlockConfig(block);
+  const isLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+  const serverUrl = cfg['server-url'] || (isLocal ? DEV_SERVER : PROD_SERVER);
+
+  await loadCSS(`${serverUrl}/chatbot/chatbot.css`);
+
+  const urls = cfg.forms ? [cfg.forms].flat() : [];
+  const names = cfg.formnames ? [cfg.formnames].flat() : [];
+  const forms = urls.length
+    ? urls.map((url, i) => ({ name: names[i] || url, url }))
+    : DEFAULT_FORMS;
+
+  block.innerHTML = '';
+
+  const { renderChat } = await import(`${serverUrl}/chatbot/core/main.js`);
+  renderChat({
+    variant: cfg.variant || 'chat',
+    serverUrl,
+    useAi: cfg.useai !== 'false',
+    container: block,
+    forms,
+    title: cfg.title || 'Maruti Suzuki',
+    logo: `${window.hlx.codeBasePath}/icons/chat.svg`,
+  });
+
+  registerSubmitHandler();
+  registerQuestionSync();
+
+  document.addEventListener('chatbot:before-start', (e) => {
+    e.detail.context = {
+      url: window.location.href,
+      queryParams: Object.fromEntries(new URLSearchParams(window.location.search)),
+    };
+    if (window.myForm?.exportData) {
+      e.detail.initialData = window.myForm.exportData();
+    }
+  });
+
+  document.addEventListener('chatbot:render-field', (e) => {
+    const {
+      field, container, setValue, submit,
+    } = e.detail;
+    if (!Array.isArray(field.enumObjects) || !field.enumObjects[0]?.title) return;
+    e.preventDefault();
+    renderCardChoice(field, container, setValue, submit);
+  });
+}

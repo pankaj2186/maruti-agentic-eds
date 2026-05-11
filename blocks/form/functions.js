@@ -66,10 +66,25 @@ function days(endDate, startDate) {
   return Math.floor(diffInMs / (1000 * 60 * 60 * 24));
 }
 
+/**
+ * Generates a unique ID using crypto.randomUUID when available, with a fallback.
+ * @returns {string} A unique identifier string.
+ */
+function generateUniqueId() {
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+    return crypto.randomUUID();
+  }
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    const r = Math.floor(Math.random() * 16);
+    const v = c === 'x' ? r : (r % 4) + 8;
+    return v.toString(16);
+  });
+}
 // eslint-disable-next-line import/prefer-default-export
 export { 
   getFullName, 
   days, 
+  generateUniqueId,
   submitFormArrayToString,
   validateKycDocumentNumber,
   calculateAgeInMonths,
