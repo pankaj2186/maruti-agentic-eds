@@ -1,60 +1,99 @@
 /* Accordion styling */
 :root {
-    --color-accordion-legend-background: #F3F6FD;
-    --color-accordion-collapse-icon: #1c3fca;
-    --color-accordion-border: #ecedf3;
+    --color-accordion-legend-background: #eef2f8;
+    --color-accordion-legend-background-open: #e4eaf5;
+    --color-accordion-border: #d0d5dd;
+    --color-accordion-content-background: #f8fafc;
+    --color-accordion-active-bar: #002f5f;
 }
 
+/* ── Outer container ─────────────────────────────────────────── */
+main .form fieldset.accordion {
+    row-gap: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--color-accordion-border);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 6%);
+}
+
+/* ── Each section (inner fieldset) ───────────────────────────── */
+main .form fieldset.accordion > fieldset:not(.checkbox-group-wrapper, .radio-group-wrapper) {
+    border: none;
+    border-bottom: 1px solid var(--color-accordion-border);
+    margin: 0;
+}
+
+main .form fieldset.accordion > fieldset:last-child {
+    border-bottom: none;
+}
+
+/* ── Section header (legend) ─────────────────────────────────── */
 main .form fieldset.accordion legend.accordion-legend {
-    padding: 24px 32px;
+    padding: 16px 48px 16px 20px;
     background-color: var(--color-accordion-legend-background);
     position: relative;
     margin-bottom: 0;
-}
-
-main .form .accordion > fieldset > legend.accordion-legend[data-visible='false'] {
-    display:block !important;
-    color:var(--color-accordion-legend-background);
+    cursor: pointer;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    color: var(--brand-primary, #002f5f);
+    border-left: 3px solid transparent;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
     user-select: none;
 }
 
+/* Open section header — accent left bar + slightly darker bg */
+main .form fieldset.accordion > fieldset:not(.accordion-collapse) > legend.accordion-legend {
+    background-color: var(--color-accordion-legend-background-open);
+    border-left-color: var(--brand-primary, #002f5f);
+}
+
+main .form fieldset.accordion legend.accordion-legend:hover {
+    background-color: var(--color-accordion-legend-background-open);
+}
+
+/* Hidden-by-visibility legends still need to show the header bar */
+main .form .accordion > fieldset > legend.accordion-legend[data-visible='false'] {
+    display: block !important;
+    color: transparent;
+    user-select: none;
+}
+
+/* ── Chevron icon (CSS-drawn, no character glyph) ─────────────── */
 main .form .accordion > fieldset > legend::after {
-    content: '\221F';
-    color: var(--color-accordion-collapse-icon);
-    font-size: 19px;
-    display: inline;
+    content: '';
+    display: block;
     position: absolute;
-    transition: transform 0s;
-    transform: rotate(-45deg);
-    margin-top: -5px;
-    right: 22px;
-    cursor: pointer;
+    top: 50%;
+    right: 20px;
+    width: 9px;
+    height: 9px;
+    border: 2px solid var(--brand-primary, #002f5f);
+    border-width: 0 2px 2px 0;
+    transform: translateY(-65%) rotate(45deg); /* ↓ chevron = collapsed */
+    transition: transform 0.2s ease;
 }
 
-main .form .accordion > fieldset.accordion-collapse > legend::after {
-    transform: rotate(-225deg);
-    margin-top: 0;
+/* When open, flip chevron to ↑ */
+main .form .accordion > fieldset:not(.accordion-collapse) > legend::after {
+    transform: translateY(-30%) rotate(-135deg);
 }
 
+/* ── Collapsed section: hide all children except legend ───────── */
 main .form fieldset.accordion-collapse > :not(legend) {
     display: none !important;
 }
 
+/* ── Open section content area ───────────────────────────────── */
+main .form fieldset.accordion > fieldset:not(.accordion-collapse) > :not(legend) {
+    background-color: var(--color-accordion-content-background);
+}
 
 main .form fieldset.accordion fieldset > :not(legend) {
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
-}
-
-main .form fieldset.accordion > fieldset:not(.checkbox-group-wrapper, .radio-group-wrapper) {
-    border: 1px solid var(--color-accordion-border);
-    margin: 0;
-}
-
-main .form fieldset.accordion  fieldset.accordion-collapse {
-    border: unset;
-}
-
-main .form fieldset.accordion {
-    row-gap: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 8px;
 }
