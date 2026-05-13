@@ -21,7 +21,7 @@ function buildSuccessMessage(uniqueId) {
   heading.append(Object.assign(document.createElement('strong'), { textContent: 'Application Submitted Successfully!' }));
 
   const footer = document.createElement('p');
-  footer.textContent = 'You will receive your physical Credit Card within 7 working days.';
+  footer.textContent = 'Thank you your interest. Our team will get in touch with you shortly to assist you further..';
 
   const content = document.createElement('div');
   content.className = 'message-content';
@@ -51,7 +51,7 @@ export default function registerSubmitHandler() {
 
     const card = window.myForm?.exportData()?.card?.title || 'Gold';
     setTimeout(() => {
-      window.location.href = `/thankyou?id=${uniqueId}&card=${encodeURIComponent(card)}`;
+      window.location.href = `/en/forms/thank-you`;
     }, 3000);
   });
 }
